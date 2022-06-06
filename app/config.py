@@ -6,6 +6,8 @@ POSTGRES_PASSWORD = os.environ["POSTGRES_PASSWORD"]
 POSTGRES_HOST = os.environ["POSTGRES_HOST"]
 POSTGRES_PORT = os.environ["POSTGRES_PORT"]
 POSTGRES_DB = os.environ["POSTGRES_DB"]
+if os.environ.get("TESTING"):
+    POSTGRES_DB = f"test_{POSTGRES_DB}"
 
 # Short URL min length
 SHORT_URL_MIN_LENGTH = 5

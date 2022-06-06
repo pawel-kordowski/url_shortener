@@ -8,7 +8,7 @@ flake8:
 	docker-compose run --rm app flake8 .
 
 test:
-	docker-compose run --rm app pytest $(extra)
+	docker-compose run --rm -e TESTING=1 app pytest $(extra)
 
 isort:
 	docker-compose run --rm app isort app/
