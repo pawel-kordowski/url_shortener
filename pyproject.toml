@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "url_shortener"
+version = "0.1.0"
+description = "Small project to shorten urls"
+authors = ["Paweł Kordowski"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "0.76.0"
+SQLAlchemy = "1.4.36"
+alembic = "1.7.7"
+uvicorn = {version = "0.17.6", extras = ["standard"]}
+asyncpg = "0.25.0"
+
+[tool.poetry.dev-dependencies]
+black = "22.3.0"
+mypy = "0.950"
+pylint = "2.13.8"
+flake8 = "4.0.1"
+pytest = "7.1.2"
+ipython = "8.3.0"
+pytest-asyncio = "0.18.3"
+isort = "5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
