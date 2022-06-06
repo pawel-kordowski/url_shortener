@@ -6,10 +6,10 @@ class UrlInput(BaseModel):
     url: str
 
     @validator("url")
-    def validate_url(cls, v):
-        if not validators.url(v):
+    def validate_url(cls, url: str) -> str:
+        if not validators.url(url):
             raise ValueError("Invalid URL")
-        return v
+        return url
 
 
 class UrlOutput(BaseModel):

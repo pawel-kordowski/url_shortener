@@ -1,8 +1,10 @@
+from __future__ import annotations
+
 from app.database import async_session
 
 
 class PostgresRepository:
-    async def __aenter__(self) -> "PostgresRepository":
+    async def __aenter__(self) -> PostgresRepository:
         self.session = async_session()
         await self.session.begin()
         return self
