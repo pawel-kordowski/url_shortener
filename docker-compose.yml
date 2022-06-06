@@ -12,7 +12,7 @@ services:
     volumes:
       - .:/code
     entrypoint: ./utils/app-entrypoint.sh
-    command: uvicorn app.api:app --reload --host 0.0.0.0
+    command: uvicorn app.api.api:app --reload --host 0.0.0.0
   db:
     image: postgres:14.2-alpine3.15
     env_file:

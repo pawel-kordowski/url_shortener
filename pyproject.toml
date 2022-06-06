@@ -11,6 +11,7 @@ SQLAlchemy = "1.4.36"
 alembic = "1.7.7"
 uvicorn = {version = "0.17.6", extras = ["standard"]}
 asyncpg = "0.25.0"
+validators = "0.20.0"
 
 [tool.poetry.dev-dependencies]
 black = "22.3.0"
