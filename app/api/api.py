@@ -18,6 +18,6 @@ async def redirect(short_url: str):
 
 @app.post("/urls/", status_code=status.HTTP_201_CREATED, response_model=UrlOutput)
 async def create_url(url: UrlInput, request: Request) -> UrlOutput:
-    url = await UrlService.create_url(full_url=url.url)
-    short_url = request.url_for("redirect", short_url=url.short_url)
-    return UrlOutput(full_url=url.full_url, short_url=short_url)
+    created_url = await UrlService.create_url(full_url=url.url)
+    short_url = request.url_for("redirect", short_url=created_url.short_url)
+    return UrlOutput(full_url=created_url.full_url, short_url=short_url)
